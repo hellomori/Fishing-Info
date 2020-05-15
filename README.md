@@ -1,24 +1,57 @@
-# README
+# FISHING-INFO DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false, unique: false|
+|password|string|null: false|
+|nickname|string|null: false, unique: false|
+### Association
+- has_many :posts
+- has_many :comments
 
-Things you may want to cover:
 
-* Ruby version
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|title|string|------|
+|content|text|------|
+|image|string|null: false|
+|area|string|-------|
+|rank|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_many :comments
+- has_many :posts_tags
+- has_many :tags, through: :posts_tags
 
-* System dependencies
 
-* Configuration
+## Tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|string|null: false|
+### Association
+- has_many :posts_tags
+- has_many :posts, through: :posts_tags
 
-* Database creation
 
-* Database initialization
+## posts_tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|post_id|integer|null: false, foreign_key: true|
+|tag_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :tag
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|post_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :post

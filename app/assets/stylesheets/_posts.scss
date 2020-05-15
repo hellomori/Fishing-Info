@@ -1,0 +1,111 @@
+.header {
+  width: 100%;
+  height: 90px;
+  background-color:#1e90db;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  &__left-content {
+    margin-left: 80px;
+    font-size: 30px;
+    &__btn {
+      text-decoration: none;
+      color: white;
+      font-family: fantasy;
+    }
+  }
+  &__right-content {
+    display: flex;
+    &__sign-in {
+      border: 2px solid white;
+      margin-right: 30px;
+      border-radius: 6px;
+      &__btn {
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        display: inline-block;
+        padding: 8px;
+      }
+    }
+    &__sign-up {
+      border: 2px solid white;
+      margin-right: 80px;
+      border-radius: 6px;
+      &__btn {
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        display: inline-block;
+        padding: 8px;
+
+      }
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  margin-top: 90px;
+  &__left {
+    width: 50%;
+    padding: 0 30px;
+    &__text-area {
+      font-size: 20px;
+      text-align: center;
+    }
+    &__images-area {
+      height: 100vh;
+      width: 100%;
+      margin-top: 20px;
+      overflow: auto;
+    }
+  }
+  &__right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    &__explain {
+      margin-bottom: 100px;
+      margin-top: 30px;
+    }
+    &__area-search {
+      width: 300px;
+      margin: 0 auto;
+      border: 1px solid #1c1cee;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 60px;
+      &__btn {
+        width: 100%;
+        text-decoration: none;
+        font-size: 20px;
+        letter-spacing: 2px;
+        color: #1c1cee;
+        text-align: center;
+      }
+    }
+    &__type-search {
+      width: 300px;
+      margin: 0 auto;
+      border: 1px solid #1c1cee;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      &__btn {
+        width: 100%;
+        text-decoration: none;
+        font-size: 20px;
+        letter-spacing: 2px;
+        color: #1c1cee;
+        text-align: center;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title FishingInfo
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+  .header
+    .header__left-content
+      =link_to "Fishing-Info", root_path, class: "header__left-content__btn"
+    .header__right-content
+      .header__right-content__sign-in
+        =link_to "ログイン", "#", class: "header__right-content__sign-in__btn"
+      .header__right-content__sign-up
+        =link_to "新規登録", "#", class: "header__right-content__sign-up__btn"
+  .bitween 
+    = yield

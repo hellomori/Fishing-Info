@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_05_15_033055) do
     t.text "content"
     t.string "image", null: false
     t.string "area", null: false
-    t.integer "rank", null: false
+    t.string "rank", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

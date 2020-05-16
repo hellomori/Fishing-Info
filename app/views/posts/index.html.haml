@@ -5,12 +5,12 @@
       %p 最新釣果
     .main__left__images-area
       .main__left__images-area__image
-      = @posts.each do |post|
-        = post.image
+        - @posts.each do |post| 
+          = link_to image_tag(post.image.thumb.url,size: "160x140", alt: "画像が見つかりません"), post_path(post)
   .main__right
     .main__right__explain
       %p ※このサイトは関西一円の釣果情報を登録ユーザー様の協力の下に一覧できます。
-      %p　ルールを守って節度を保てる様、何卒よろしくお願い致します。
+      %p 　ルールを守って節度を保てる様、何卒よろしくお願い致します。
     .main__right__area-search
       = link_to "エリアから釣果を調べる", "#", class: "main__right__area-search__btn"
     .main__right__type-search
@@ -28,3 +28,5 @@
         .main__right__link-sns__icons__facebook
           = link_to "https://www.facebook.com/", class: "main__right__link-sns__icons__facebook__btn" do
             = icon('fab', 'facebook-square')
+    .main__right__thanks
+      %p Thank you very much for browsing.

@@ -26,3 +26,22 @@
           = link_to "編集する", edit_post_path(@post), class: "show__right__login__edit__btn"
         .show__right__login__destroy
           = link_to "削除する", post_path(@post), method: :delete, class: "show__right__login__destroy__btn"
+.comment
+  .comment__form
+    - if current_user
+      = form_for [@post, @comment] do |f|
+        = f. text_area :text, placeholder: "コメントを入力してください", class: "comment__form__area"
+        = f.submit "SEND", class: "comment__form__submit"
+  .comment__label
+    %p <コメント一覧>
+  .comment__display   
+    - @comments.each do |comment|
+      .comment__display__top
+        .comment__display__top__date
+          = comment.post.created_at.to_s(:datetime_jp)
+      .comment__display__bottom
+        .comment__display__bottom__name
+          = comment.user.nickname
+        %p ：
+        .comment__display__bottom__text
+          = simple_format comment.text

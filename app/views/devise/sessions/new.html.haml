@@ -1,0 +1,15 @@
+.sign
+  .sign__title
+    %h2 Sign in
+  .sign__form
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .sign__form__email
+        = f.label :email
+        %br
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Please enter your email address.", class: "sign__form__area"
+      .sign__form__password
+        = f.label :password
+        %br
+        = f.password_field :password, autocomplete: "current-password", placeholder: "Please enter your original password.", class: "sign__form__area"
+      .actions
+        = f.submit "Sign in", class: "sign__form__submit"

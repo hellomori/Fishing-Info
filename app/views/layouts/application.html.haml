@@ -12,9 +12,19 @@
     .header__left-content
       =link_to "Fishing-Info", root_path, class: "header__left-content__btn"
     .header__right-content
-      .header__right-content__sign-in
-        =link_to "ログイン", "#", class: "header__right-content__sign-in__btn"
-      .header__right-content__sign-up
-        =link_to "新規登録", "#", class: "header__right-content__sign-up__btn"
-  .bitween 
-    = yield
+      - if user_signed_in?
+        .header__right-content__name
+          = current_user.nickname
+          %span ▼
+          %li
+            = link_to "マイページ", user_path(current_user), class: "header__right-content__name__mypage"
+          %li 
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right-content__name__sign-out"
+        .header__right-content__post  
+          = link_to "投稿する", new_post_path, class: "header__right-content__post__btn" 
+      - else
+        .header__right-content__sign-in
+          = link_to "ログイン", new_user_session_path, class: "header__right-content__sign-in__btn"
+        .header__right-content__sign-up
+          = link_to "新規登録", new_user_registration_path, class: "header__right-content__sign-up__btn"
+  = yield

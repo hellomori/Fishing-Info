@@ -4,19 +4,25 @@
       = image_tag @post.image.thumb.url, alt: "画像が見つかりません"
   .show__right
     .show__right__person
-      %p 釣った人物：
+      %p 投稿者：
+      = @post.user.nickname
+      %p 様
+    .show__right__date
+      %p 投稿日：
+      = @post.created_at.to_s(:datetime_jp)
     .show__right__area
-      %p 釣った場所：
+      %p エリア：
       = @post.area
     .show__right__rank
-      %p 自己満足度：
+      %p 満足度：
       = @post.rank
     .show__right__title
       = @post.title
     .show__right__content
       = simple_format @post.content
-    .show__right__login
-      .show__right__login__edit
-        = link_to "編集する", edit_post_path(@post), class: "show__right__login__edit__btn"
-      .show__right__login__destroy
-        = link_to "削除する", post_path(@post), method: :delete, class: "show__right__login__destroy__btn"
+    - if user_signed_in? && current_user.id == @post.user_id
+      .show__right__login
+        .show__right__login__edit
+          = link_to "編集する", edit_post_path(@post), class: "show__right__login__edit__btn"
+        .show__right__login__destroy
+          = link_to "削除する", post_path(@post), method: :delete, class: "show__right__login__destroy__btn"

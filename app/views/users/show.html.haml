@@ -1,0 +1,6 @@
+.mypage
+  - @posts.each do |post|
+    .mypage__image
+      = link_to image_tag(post.image.url, size: "320x280", alt: "画像が見つかりません"), post_path(post)
+      .mypage__date
+        = post.created_at.to_s(:datetime_jp)

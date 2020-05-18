@@ -35,8 +35,10 @@
 
 .mypage {
   width: 92%;
-  margin: 0 auto;
-  padding-top: 100px;
+  margin: 110px auto 0;
+  padding-top: 15px;
+  padding-left: 25px;
+  border: 5px double #4ec4d3;
   &__image {
     position: relative;
     display: inline;
@@ -46,6 +48,6 @@
     bottom: 5px;
     left: 5px;
     font-size: 15px;
-    color: yellow;
+    color: #f1e365;
   }
 }

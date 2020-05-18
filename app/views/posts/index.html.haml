@@ -2,11 +2,15 @@
 .main
   .main__left
     .main__left__text-area
-      %p 最新釣果
+      %p Everyone's Fishing Results In These Days
     .main__left__images-area
       .main__left__images-area__image
         - @posts.each do |post| 
-          = link_to image_tag(post.image.thumb.url,size: "160x140", alt: "画像が見つかりません"), post_path(post)
+          .main__left__images-area__image__once
+            = link_to image_tag(post.image.thumb.url,size: "160x140", alt: "画像が見つかりません"), post_path(post)
+            .main__left__images-area__image__once__date
+              = post.created_at.to_s(:datetime_jp)
+        = paginate @posts
   .main__right
     .main__right__explain
       %p ※このサイトは関西一円の釣果情報を登録ユーザー様の協力の下に一覧できます。

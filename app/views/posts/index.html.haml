@@ -16,10 +16,11 @@
       %p ※このサイトは関西一円の釣果情報を登録ユーザー様の協力の下に一覧できます。
       %p ※ルールを守って節度を保てる様、何卒よろしくお願い致します。
       %p ※投稿する際は、写真を必ず1枚添付してください。（複数枚不可）
-    .main__right__area-search
-      = link_to "エリアから釣果を調べる", "#", class: "main__right__area-search__btn"
-    .main__right__type-search
-      = link_to "魚種から釣果を調べる", "#", class: "main__right__type-search__btn"
+    .main__right__search
+      .main__right__search__area
+        = link_to "エリアから釣果を調べる", "#", class: "main__right__search__area__btn"
+      .main__right__search__type
+        = link_to "魚種から釣果を調べる", "#", class: "main__right__search__type__btn"
     .main__right__link-sns
       .main__right__link-sns__text
         %p Link To Social Networking Service

@@ -42,6 +42,9 @@
   &__image {
     position: relative;
     display: inline;
+    &:hover {
+      opacity: 0.5;
+    }
   }
   &__date {
     position: absolute;

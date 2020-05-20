@@ -2,7 +2,9 @@
 .main
   .main__left
     .main__left__text-area
+      = image_tag src= "/assets/squid.jpeg", size: "50x50"
       %p Everyone's Fishing Results In These Days
+      = image_tag src= "/assets/whale.png", size: "60x60"
     .main__left__images-area
       .main__left__images-area__image
         - @posts.each do |post| 
@@ -16,10 +18,38 @@
       %p ※このサイトは関西一円の釣果情報を登録ユーザー様の協力の下に一覧できます。
       %p ※ルールを守って節度を保てる様、何卒よろしくお願い致します。
       %p ※投稿する際は、写真を必ず1枚添付してください。（複数枚不可）
-    .main__right__area-search
-      = link_to "エリアから釣果を調べる", "#", class: "main__right__area-search__btn"
-    .main__right__type-search
-      = link_to "魚種から釣果を調べる", "#", class: "main__right__type-search__btn"
+    .main__right__search1
+      .main__right__search1__area
+        = form_with(url: search_posts_path, local: true, method: :get) do |f|
+          .main__right__search1__area__link
+            = f.label :エリアから釣果を調べる, class: "main__right__search1__area__link__btn"
+          %br
+          .main__right__search1__area__select
+            = f.select :keyword, [["未選択", "未選択"], ["大阪市内", "大阪市内"], ["泉北エリア", "泉北エリア"], ["泉南エリア", "泉南エリア"], ["和歌山市内・海南エリア", "和歌山市内・海南エリア"], ["中紀エリア", "中紀エリア"], ["南紀エリア", "南紀エリア"], ["阪神エリア", "阪神エリア"], ["神戸市内", "神戸市内"], ["東播磨エリア", "東播磨エリア"], ["中播磨エリア", "中播磨エリア"], ["西播磨エリア", "西播磨エリア"], ["淡路島", "淡路島"], ["徳島県", "徳島県"], ["豊岡エリア", "豊岡エリア"], ["香美エリア", "香美エリア"], ["新温泉エリア", "新温泉エリア"],  ["鳥取県", "鳥取県"],["舞鶴エリア", "舞鶴エリア"], ["宮津エリア", "宮津エリア"], ["伊根エリア", "伊根エリア"], ["京丹後エリア", "京丹後エリア"], ["福井県", "福井県"],  ["東紀州エリア", "東紀州エリア"], ["伊勢志摩エリア", "伊勢志摩エリア"], ["中勢エリア", "中勢エリア"], ["北勢エリア", "北勢エリア"], ["船釣り", "船釣り"], ["釣り堀", "釣り堀"], ["バス釣り", "バス釣り"], ["渓流釣り", "渓流釣り"], ["その他", "その他"]]
+            = f.submit "検索する", class: "main__right__search1__area__link__submit"
+      .main__right__search1_type
+        = form_with(url: search_posts_path, local: true, method: :get) do |f|
+          .main__right__search1__type__link
+            = f.label :魚種から釣果を調べる, class: "main__right__search1__type__link__btn"
+          %br
+          .main__right__search1__type__checkbox
+            = f.select :keyword, [["未選択", "未選択"], ["------------------------------", ""]]
+            = f.submit "検索する", class: "main__right__search1__type__checkbox__submit"
+    .main__right__search2
+      .main__right__search2__keyword
+        = form_with(url: search_posts_path, local: true, method: :get) do |f|
+          .main__right__search2__keyword__link
+            = f.label :キーワードで釣果を調べる, class: "main__right__search2__keyword__link__btn"
+          %br
+          = f.text_field :keyword, placeholder: "投稿を検索する", class: "main__right__search2__keyword__link__text-field"
+          = f.submit "検索する", class: "main__right__search2__keyword__link__submit"
+      .main__right__search2__rank
+        = form_with(url: search_posts_path, local: true, method: :get) do |f|
+          .main__right__search2__rank__link
+            = f.label :満足度で釣果を検索する, class: "main__right__search2__rank__link__btn"
+          %br
+          = f.select :keyword, [["未選択", "未選択"], ["満足度：低", "低"], ["満足度：中", "中"], ["満足度：高", "高"], ["------------------------------", ""]]
+          = f.submit "検索する", class: "main__right__search2__rank__link__submit"
     .main__right__link-sns
       .main__right__link-sns__text
         %p Link To Social Networking Service

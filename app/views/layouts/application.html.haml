@@ -27,4 +27,17 @@
           = link_to "ログイン", new_user_session_path, class: "header__right-content__sign-in__btn"
         .header__right-content__sign-up
           = link_to "新規登録", new_user_registration_path, class: "header__right-content__sign-up__btn"
+  .sub-header
+    = link_to "シーバス", seabass_posts_path, class: "sub-header__parts"
+    = link_to "エギング", eging_posts_path, class: "sub-header__parts"
+    = link_to "アジング", ajing_posts_path, class: "sub-header__parts"
+    = link_to "ショアジギング", shore_jigging_posts_path, class: "sub-header__parts"
+    = link_to "バス釣り", bass_posts_path, class: "sub-header__parts"
+    = link_to "結び方（ノット）", "http://www.gosen-f.jp/knot/", target: "_blank", class: "sub-header__parts"
+    = link_to "ロッド", "https://www.rere.jp/beginners/34154/", target: "_blank", class: "sub-header__parts"
+    = link_to "スピニングリール", "https://tackleoff.com/spinning-reel/", target: "_blank", class: "sub-header__parts"
+    = link_to "ベイトリール", "https://tackleoff.com/baitcastind-reel/", target: "_blank",class: "sub-header__parts"
+    = link_to "シマノ", "http://fishing.shimano.co.jp/product", target: "_blank",class: "sub-header__parts"
+    = link_to "ダイワ", "https://www.daiwa.com/jp/", target: "_blank", class: "sub-header__parts"
+    = link_to "がまかつ", "http://www.gamakatsu.co.jp/", target: "_blank", class: "sub-header__parts"
   = yield

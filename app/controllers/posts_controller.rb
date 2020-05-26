@@ -37,9 +37,24 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword]).order(created_at: "DESC").page(params[:page]).per(40)
   end
 
+  def seabass
+  end
+
+  def eging
+  end
+
+  def ajing
+  end
+
+  def shore_jiggig
+  end
+
+  def bass
+  end
+
   private
   def post_params
-    params.require(:post).permit(:title, :content, :image, :area, :rank, :tag_list => []).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :content, :image, :area, :rank, tag_list: []).merge(user_id: current_user.id)
   end
 
   def set_post

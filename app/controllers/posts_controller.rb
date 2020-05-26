@@ -49,7 +49,31 @@ class PostsController < ApplicationController
   def shore_jiggig
   end
 
+  def wind
+  end
+
   def bass
+  end
+
+  def enjoy
+  end
+
+  def osaka
+  end
+
+  def wakayama
+  end
+
+  def kyoto
+  end
+
+  def hyogos
+  end
+
+  def hyogon
+  end
+
+  def awaji
   end
 
   private

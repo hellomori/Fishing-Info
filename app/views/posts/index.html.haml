@@ -64,4 +64,4 @@
           = link_to "https://www.facebook.com/", target: "_blank", class: "main__right__link-sns__icons__facebook__btn" do
             = icon('fab', 'facebook-square')
     .main__right__thanks
-      %p Thank you very much for browsing.
+      = link_to "Thank you very much for browsing.", enjoy_posts_path

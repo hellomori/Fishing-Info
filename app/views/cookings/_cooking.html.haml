@@ -1,0 +1,7 @@
+.cooking
+  = form_with(model: @cooking, local:true) do |f|
+    = f.text_field :title, placeholder: "料理のタイトルを入力してください", class: "cooking__post-title"
+    %br
+    = f.text_field :image, placeholder: "画像URLを入力してください", class: "cooking__post-image"
+    %br
+    = f.submit "送信する", class: "cooking__post-submit"

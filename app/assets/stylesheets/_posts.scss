@@ -292,7 +292,7 @@ h3 {
     &__link-sns {
       width: 80%;
       height: 280px;
-      margin: 0 auto;
+      margin: 30px auto 0;
       &__text {
         height: 100px;
         background-color: black;
@@ -355,6 +355,16 @@ h3 {
       & a{
         text-decoration: none;
         color: #f017a7;
+      }
+    }
+    &__cooking {
+      margin: 0 auto;
+      font-size: 40px;
+      font-family: cursive;
+      padding-top: 60px;
+      & a {
+        text-decoration: none;
+        color: #fc003f;
       }
     }
   }

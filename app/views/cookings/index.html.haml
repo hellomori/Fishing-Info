@@ -1,0 +1,17 @@
+.cooking
+  - @cooking.each do |cook|
+    .cooking__title
+      = cook.title 
+    .cooking__image
+      = image_tag cook.image, size: "800x600", class: "cooking__image__img", alt: "画像が見つかりません"
+      .cooking__icon
+        %a{class: "fas fa-sort-down"}
+        %li
+          = link_to "詳細", cooking_path(cook), class: "cooking__icon__show"
+        %li
+          = link_to "編集", edit_cooking_path(cook), class: "cooking__icon__edit"
+        %li
+          = link_to "削除", cooking_path(cook), method: :delete, class: "cooking__icon__destroy"
+  .cooking__post
+    = link_to "投稿する", new_cooking_path, class: "cooking__post__link"
+

@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: :show
+  resources :cookings
+  resources :chats, only: [:index, :new, :create]
 end
 

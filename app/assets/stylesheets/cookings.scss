@@ -1,0 +1,101 @@
+@mixin pull-down {
+  position: absolute;
+  right: 20px;
+  text-decoration: none;
+  background-color: rgba(255,223,234,0.4);
+  padding: 3px 12px;
+  border-radius: 5px;
+  color: white;
+  &:hover {
+    color: pink;
+  }
+}
+
+.cooking {
+  padding-top: 150px;
+  padding-bottom: 60px;
+  width: 100%;
+  height: 100%;
+  background: image-url("background.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__title {
+    font-size: 30px;
+    color: #ff0496;
+  }
+  &__image {
+    position: relative;
+  }
+  &__icon {
+    & li {
+      display: none;
+    }
+    &:hover li{
+      display: block;
+    }
+    &__show {
+      @include pull-down;
+      top: 50px;
+    }
+    &__edit {
+      @include pull-down;
+      top: 81px;
+    }
+    &__destroy {
+      @include pull-down;
+      top: 112px;
+    }
+  }
+.fa-sort-down {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  font-size: 50px;
+  color: #3b3b3b;
+}
+  &__post {
+    &__link {
+      writing-mode: vertical-lr;
+      text-decoration: none;
+      position: absolute;
+      top: 200px;
+      right: 150px;
+      font-size: 30px;
+      border: 5px solid pink;
+      border-radius: 20px;
+      color: pink;
+    }
+  }
+  &__post-title {
+    height: 50px;
+    width: 800px;
+    margin: 0 auto 30px;
+    border-radius: 25px;
+    border: none;
+    outline: 0;
+    padding: 0 30px;
+  }
+  &__post-image {
+    height: 50px;
+    width: 800px;
+    margin: 0 auto 30px;
+    border-radius: 25px;
+    border: none;
+    outline: 0;
+    padding: 0 30px;  
+}
+  &__post-submit {
+    height: 50px;
+    width: 860px;
+    margin: 0 auto 30px;
+    border-radius: 25px;
+    border: none;
+    outline: 0;
+    &:hover {
+      box-shadow: 0 0 10px #101010;
+    }
+  }
+}

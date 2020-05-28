@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: Fishing-Info_production
-  username: Fishing-Info
-  password: <%= ENV['FISHING-INFO_DATABASE_PASSWORD'] %>
+  # database: Fishing-Info_production
+  # username: Fishing-Info
+  # password: <%= ENV['FISHING-INFO_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 10

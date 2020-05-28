@@ -1,0 +1,32 @@
+.chat {
+  width: 50%;
+  height: 400px;
+  margin: 150px auto 0;
+  border: 1px solid black;
+  overflow: auto;
+  &__top {
+    display: flex;
+    &__name {
+      margin-right: 12px;
+      font-size: 13px;
+      color: gray;
+    }
+    &__date {
+      font-size: 13px;
+      color: gray;
+    }
+  }
+}
+
+.chatform {
+  width: 50%;
+  height: 80px;
+  margin: 0 auto;
+  border: 1px solid black ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__text {
+    width: 400px;
+  }
+}

@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :comments
   has_many :chats
 
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, presence: true, uniqueness: true, length: {maximum: 6}
 end

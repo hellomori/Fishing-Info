@@ -361,10 +361,18 @@ h3 {
       margin: 0 auto;
       font-size: 40px;
       font-family: cursive;
-      padding-top: 60px;
       & a {
         text-decoration: none;
         color: #fc003f;
+      }
+    }
+    &__chat {
+      margin: 0 auto;
+      font-size: 20px;
+      font-family: cursive;
+      & a {
+        text-decoration: none;
+        color: gray;
       }
     }
   }

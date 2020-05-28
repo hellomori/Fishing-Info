@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :cookings
-  resources :chats, only: [:index, :new, :create]
+  resources :chats, only: [:index, :create]
 end
 

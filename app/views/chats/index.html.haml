@@ -1,0 +1,13 @@
+.chat
+  - @chats.each do |chat|
+    .chat__top
+      .chat__top__name
+        = chat.user.nickname
+      .chat__top__date
+        = chat.created_at.strftime("%H:%M")
+    .chat__message
+      = chat.message
+.chatform
+  = form_with(model: @chat, local: true, id: "chat") do |f|
+    = f.text_field :message, placeholder: "メッセージを入力...", class: "chatform__text"
+    = f.submit "送信", class: "chatform__submit"

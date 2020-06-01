@@ -79,6 +79,9 @@ class PostsController < ApplicationController
   def where_is_wally
   end
 
+  def where_is_wally2
+  end
+
   def clear
   end
 

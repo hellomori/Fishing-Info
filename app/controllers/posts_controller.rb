@@ -76,6 +76,12 @@ class PostsController < ApplicationController
   def awaji
   end
 
+  def where_is_wally
+  end
+
+  def clear
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :content, :image, :area, :rank, tag_list: []).merge(user_id: current_user.id)

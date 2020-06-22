@@ -8,7 +8,7 @@ class Post < ApplicationRecord
 
   with_options presence: true do
     validates :image
-    validates :area
+    validates :area_id
     validates :rank
   end
 

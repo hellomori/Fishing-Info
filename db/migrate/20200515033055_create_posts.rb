@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :content
       t.string :image, null: false
-      t.string :area, null: false
+      t.integer :area_id, null: false
       t.string :rank, null: false
       t.timestamps
     end

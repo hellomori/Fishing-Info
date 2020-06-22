@@ -152,7 +152,7 @@
   %br
   = f.label :エリアを選択してください（必須）
   %br
-  = f.collection_select :area_id, Area.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, required: ""
+  = f.collection_select :area, Area.all, :id, :name, {include_blank: "選択して下さい", selected: "選択して下さい"}, required: ""
   %br
   = f.label :自己満足度を3段階で評価してください（必須）
   %br

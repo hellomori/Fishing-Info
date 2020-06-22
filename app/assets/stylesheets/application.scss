@@ -1,7 +1,8 @@
-@import "reset";
+@import "./config/reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "posts";
-@import "users";
-@import "cookings";
-@import "chats";
+@import "./mixin/mixin";
+@import "./modules/posts";
+@import "./modules/users";
+@import "./modules/cookings";
+@import "./modules/chats";

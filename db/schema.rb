@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_031138) do
     t.string "title"
     t.text "content"
     t.string "image", null: false
-    t.string "area", null: false
+    t.integer "area_id", null: false
     t.string "rank", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_031138) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -83,7 +84,6 @@ ActiveRecord::Schema.define(version: 2020_05_27_031138) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "nickname", default: ""
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -91,5 +91,4 @@ ActiveRecord::Schema.define(version: 2020_05_27_031138) do
   add_foreign_key "chats", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "taggings", "tags"
 end

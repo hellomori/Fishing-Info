@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_031138) do
+ActiveRecord::Schema.define(version: 2020_06_23_235352) do
 
   create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "message", null: false
@@ -37,10 +37,16 @@ ActiveRecord::Schema.define(version: 2020_05_27_031138) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.string "src", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.string "image", null: false
     t.integer "area_id", null: false
     t.string "rank", null: false
     t.datetime "created_at", null: false

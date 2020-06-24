@@ -7,10 +7,119 @@
   %br
   = f.text_area :content, placeholder: "よろしければ釣り方や場所の詳細、感想等を入力してください", class: "form__main__area__content"
   %br
-  =f.label :投稿する写真を1枚選択してください（必須）
+  =f.label :最大4枚までアップロードできます（必須）
   %br
   %br
-  = f.file_field :image, class:"form__main__area__image"
+  .post__drop__box__container
+    .prev-content
+    .label-content#image-box
+    .hidden-content
+      = icon("fas", "camera")
+      %p クリックしてファイルをアップロード
+      .hidden-content-image
+        =image_tag '',id:"image-file",height:"150",width:"150"
+        #hidden-content-delete 削 除
+        =image_tag '',id:"image-file1",height:"150",width:"150"
+        #hidden-content-delete1 削 除
+        =image_tag '',id:"image-file2",height:"150",width:"150"
+        #hidden-content-delete2 削 除
+        =image_tag '',id:"image-file3",height:"150",width:"150"
+        #hidden-content-delete3 削 除
+        :javascript
+          $(function(){
+                post_images_attributes_0_src.addEventListener('change', function(e){
+                  let file = e.target.files[0];
+                  let fileReader = new FileReader();
+                  fileReader.onload = function() {
+                    let dataUri = this.result;
+                    let img = document.getElementById('image-file');
+                    img.src = dataUri;
+                    img.style.opacity = 1;
+                }
+                    fileReader.readAsDataURL(file);
+                    $('#post_images_attributes_0_src').hide();
+                    let block = document.getElementById('post_images_attributes_1_src');
+                    block.style.display = "block";
+                    let d = document.getElementById('hidden-content-delete');
+                    d.style.display = "block";
+                    $(function(){
+                      $('#hidden-content-delete').on('click', function(){
+                        $('#image-file').remove();
+                        $('#hidden-content-delete').remove();
+                        $('#post_images_attributes_0_src').remove();
+                      });
+                    });
+                  });
+                post_images_attributes_1_src.addEventListener('change', function(e){
+                  var file = e.target.files[0];
+                  var fileReader = new FileReader();
+                  fileReader.onload = function() {
+                    var dataUri = this.result;
+                    var img = document.getElementById('image-file1');
+                    img.src = dataUri;
+                    img.style.opacity = 1;
+                  }
+                  fileReader.readAsDataURL(file);
+                    $('#post_images_attributes_1_src').hide();
+                    var img = document.getElementById('post_images_attributes_2_src');
+                    img.style.display = "block";
+                    var d = document.getElementById('hidden-content-delete1');
+                    d.style.display = "block";
+                    $(function(){
+                      $('#hidden-content-delete1').on('click', function(){
+                        $('#image-file1').remove();
+                        $('#hidden-content-delete1').remove();
+                        $('#post_images_attributes_1_src').remove();
+                      });
+                    });
+                  });
+                post_images_attributes_2_src.addEventListener('change', function(e){
+                  var file = e.target.files[0];
+                  var fileReader = new FileReader();
+                  fileReader.onload = function() {
+                    var dataUri = this.result;
+                    var img = document.getElementById('image-file2');
+                    img.src = dataUri;
+                    img.style.opacity = 1;
+                  }
+                  fileReader.readAsDataURL(file);
+                    $('#post_images_attributes_2_src').hide();
+                    var img = document.getElementById('post_images_attributes_3_src');
+                    img.style.display = "block";
+                    var d = document.getElementById('hidden-content-delete2');
+                    d.style.display = "block";
+                    $(function(){
+                      $('#hidden-content-delete2').on('click', function(){
+                        $('#image-file2').remove();
+                        $('#hidden-content-delete2').remove();
+                        $('#post_images_attributes_2_src').remove();
+                      });
+                    });
+                });
+                post_images_attributes_3_src.addEventListener('change', function(e){
+                  var file = e.target.files[0];
+                  var fileReader = new FileReader();
+                  fileReader.onload = function() {
+                    var dataUri = this.result;
+                    var img = document.getElementById('image-file3');
+                    img.src = dataUri;
+                    img.style.opacity = 1;
+                  }
+                  fileReader.readAsDataURL(file);
+                  $('#post_images_attributes_3_src').hide();
+                  var d = document.getElementById('hidden-content-delete3');
+                    d.style.display = "block";
+                    $(function(){
+                      $('#hidden-content-delete3').on('click', function(){
+                        $('#image-file3').remove();
+                        $('#hidden-content-delete3').remove();
+                        $('#post_images_attributes_3_src').remove();
+                      });
+                    });
+                  });
+                });
+      = f.fields_for :images do |i|
+        = i.file_field :src, class: "js-file"
   %br
   = f.label :魚種目撃情報（任意）
   %br

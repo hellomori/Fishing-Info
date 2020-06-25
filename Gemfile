@@ -76,7 +76,6 @@ gem "rspec-rails"
 gem 'factory_bot_rails'
 gem "rails-controller-testing"
 gem "fog-aws"
-gem "active_hash"
 
 group :production do
   gem "pg"

@@ -12,8 +12,6 @@ class PostsController < ApplicationController
       redirect_to root_path
     end
     @post = Post.new
-    @post.images.new
-    3.times{@post.images.build}
   end
 
   def create
@@ -97,7 +95,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :area_id, :rank, tag_list: [], images_attributes: [:src]).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :content, :image, :area, :rank, tag_list: []).merge(user_id: current_user.id)
   end
 
   def set_post

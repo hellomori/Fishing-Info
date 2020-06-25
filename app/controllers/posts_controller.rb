@@ -7,12 +7,22 @@ class PostsController < ApplicationController
   end
 
   def new
+    unless user_signed_in?
+      flash[:alert] = "ログインしてください"
+      redirect_to root_path
+    end
     @post = Post.new
+    @post.images.new
+    3.times{@post.images.build}
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to root_path
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -76,9 +86,18 @@ class PostsController < ApplicationController
   def awaji
   end
 
+  def where_is_wally
+  end
+
+  def where_is_wally2
+  end
+
+  def clear
+  end
+
   private
   def post_params
-    params.require(:post).permit(:title, :content, :image, :area, :rank, tag_list: []).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :content, :area_id, :rank, tag_list: [], images_attributes: [:src]).merge(user_id: current_user.id)
   end
 
   def set_post

@@ -1,5 +1,19 @@
 # FISHING-INFO DB設計
 
+## 概要
+釣果情報アプリケーションを作成しました。
+
+## 接続先情報
+- デプロイ先：https://fishing-info.herokuapp.com/
+
+## 開発状況
+- 開発環境
+  - Ruby/Ruby on Rails/PostgreSQL/Github/heroku/Visual Studio Code
+  
+- 開発期間と平均作業時間
+  - 開発期間：約2週間
+  - 1日あたりの平均作業時間：約10時間
+
 
 ## usersテーブル
 |Column|Type|Options|

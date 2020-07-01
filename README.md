@@ -1,4 +1,4 @@
-# FISHING-INFO DB設計
+# FISHING-INFO
 
 ## 概要
 釣果情報アプリケーションを作成しました。

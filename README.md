@@ -14,12 +14,7 @@
     - パスワード：test@test
 
 ## 制作背景
-- 自分の趣味が海釣りなのですが、誰でも手軽に釣果情報を投稿できるWebアプリが欲しいと思っていたので作成しました。
-  既存のWebアプリでは複数投稿故に情報がどんどん更新され、欲しい情報の検索をする際に時間がかかったりするので、
-  あえて1枚投稿にしました。また、しっかりとエリアと満足度を記載する欄を設けることで、どこの場所でどれだけ魚影が
-  濃いのかを、検索ですぐにわかるようにしました。
-  既にアップロードされている画像のみですが、魚料理を投稿できる箇所も実装しました。
-  スクールで習った事を実際にアプリに昇華できる良い機会だと思い、習った事を全て詰め込みました。
+- 自分の趣味が海釣りなのですが、誰でも手軽に釣果情報を投稿できるWebアプリが欲しいと思っていたので作成しました。既存のWebアプリでは複数投稿故に情報がどんどん更新され、欲しい情報の検索をする際に時間がかかったりするので、あえて1枚投稿にしました。また、しっかりとエリアと満足度を記載する欄を設けることで、どこの場所でどれだけ魚影が濃いのかを、検索ですぐにわかるようにしました。既にアップロードされている画像のみですが、魚料理を投稿できる箇所も実装しました。スクールで習った事を実際にアプリに昇華できる良い機会だと思い、習った事を全て詰め込みました。
 
 ## 工夫した点
 - 既存のWebアプリで存在するイメージマップという技術に感銘を受け、そのまま実装すると共に、別の箇所で少し手を加えて、
@@ -30,6 +25,10 @@
 
 ## DEMO
 [![Image from Gyazo](https://i.gyazo.com/1fefff926302a6b3989f948ebf9fc83e.jpg)](https://gyazo.com/1fefff926302a6b3989f948ebf9fc83e)
+[![Image from Gyazo](https://i.gyazo.com/611de860190dfc6f26ffd3cc6696f2c2.png)](https://gyazo.com/611de860190dfc6f26ffd3cc6696f2c2)
+[![Image from Gyazo](https://i.gyazo.com/0c01084fcd54442cf16d49cdfded96de.png)](https://gyazo.com/0c01084fcd54442cf16d49cdfded96de)
+[![Image from Gyazo](https://i.gyazo.com/24f3472b17ae8ffb96a5a21e3c79e721.jpg)](https://gyazo.com/24f3472b17ae8ffb96a5a21e3c79e721)
+[![Image from Gyazo](https://i.gyazo.com/36d277f9b6c8c08858ddde8b0e4460c4.png)](https://gyazo.com/36d277f9b6c8c08858ddde8b0e4460c4)
 [![Image from Gyazo](https://i.gyazo.com/d8b9fe5aa2b99d180bbae9ce42d8a662.jpg)](https://gyazo.com/d8b9fe5aa2b99d180bbae9ce42d8a662)
 [![Image from Gyazo](https://i.gyazo.com/0f9f1d42dfbb1c2c6a3b199555dca25e.jpg)](https://gyazo.com/0f9f1d42dfbb1c2c6a3b199555dca25e)
 [![Image from Gyazo](https://i.gyazo.com/229bf0bb66de7bc7a613e03ec710e556.jpg)](https://gyazo.com/229bf0bb66de7bc7a613e03ec710e556)
